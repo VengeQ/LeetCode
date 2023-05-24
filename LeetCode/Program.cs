@@ -3,26 +3,27 @@ using LeetCode;
 
 //[[1,[]],[-3],[-2],[-4],[0],[4]]
 
-var solution = new KthLargest(3, new int[] { 4, 5, 8, 2 });
+var solution = new MaximumSubsequenceScore.Solution();
 
-Console.WriteLine(solution.Add(3));
-Console.WriteLine(solution.Add(5));
-Console.WriteLine(solution.Add(10));
-Console.WriteLine(solution.Add(9));
-Console.WriteLine(solution.Add(5));
 
-var solution1 = new KthLargest(1, new int[] { });
+//var arr1 = new int[] { 44, 10, 25, 0, 25, 49, 0 };
+//var arr2 = new int[] { 18, 39, 15, 31, 43, 20, 45 };
+//var k = 6;
 
-Console.WriteLine(solution1.Add(-3));
-Console.WriteLine(solution1.Add(-2));
-Console.WriteLine(solution1.Add(-4));
-Console.WriteLine(solution1.Add(0));
-Console.WriteLine(solution1.Add(4));
+//var arr1 = new int[] { 4, 2, 3, 1, 1 };
+//var arr2 = new int[] { 7, 5, 10, 9, 6 };
+//var k = 1;
 
-var solution2 = new KthLargest(2, new int[] { 0 });
+//var arr1 = new int[] { 1, 3, 3, 2 };
+//var arr2 = new int[] { 2, 1, 3, 4 };
+//var k = 3;
 
-Console.WriteLine(solution2.Add(-1));
-Console.WriteLine(solution2.Add(1));
-Console.WriteLine(solution2.Add(-2));
-Console.WriteLine(solution2.Add(-4));
-Console.WriteLine(solution2.Add(3));
+
+var arr1 = new int[] {93,463,179,2488,619,2006,1561,137,53,1765,2304,1459,1768,450,1938,2054,466,331,670,1830,1550,1534,2164,1280,2277,2312,1509,867,2223,1482,2379,1032,359,1746,966,232,67,1203,2474,944,1740,1775,1799,1156,1982,1416,511,1167,1334,2344};
+var arr2 = new int[] { 345,229,976,2086,567,726,1640,2451,1829,77,1631,306,2032,2497,551,2005,2009,1855,1685,729,2498,2204,588,474,693,30,2051,1126,1293,1378,1693,1995,2188,1284,1414,1618,2005,1005,1890,30,895,155,526,682,2454,278,999,1417,1682,995 };
+var k = 42;
+
+
+var result = solution.MaxScore(arr1, arr2, k);
+
+Console.WriteLine(result);
