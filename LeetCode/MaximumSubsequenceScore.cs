@@ -12,70 +12,34 @@
                     throw new Exception();
                 }
 
-                var sortedNums2 = nums2.Select((x, i) => (x, i)).OrderBy(x => x).ToArray();
-                var sortedNums1 = new int[nums1.Length].ToList();
+                var dict = new (int, int)[nums1.Length];
 
-                var counter = 0;
-
-                foreach (var x in sortedNums2)
+                for (int i = 0; i< nums1.Length; i++)
                 {
-                    sortedNums1[counter] = nums1[x.i];
-                    counter++;
+                    dict[i] = (nums1[i], nums2[i]);
                 }
+
+                var sortedDict = dict.OrderBy(x => x.Item2).ToArray();
+
+                var sortedNums2 = sortedDict.Select(x => x.Item2).ToArray();
+                var sortedNums1 = sortedDict.Select((x, index) => (x.Item1, index)).OrderByDescending(x => x).ToArray();
 
                 long result = 0L;
 
-                if (k == 1)
+                for (int j = 0; j < sortedNums2.Length - k + 1; j++)
                 {
-                    for (int j = 0; j < sortedNums2.Length; j++)
+                    var excluded = sortedNums1.Single(x => x.index == j).Item1;
+                    var included = sortedNums1.Where(x => x.index >= j).Select(x => x.Item1).ToArray();
+
+                    var newResult = (included.Take(k - 1).Select(v => Convert.ToInt64(v)).Sum() + excluded) * sortedNums2[j];
+                    if (newResult > result)
                     {
-                        var newResult = sortedNums2[j].x * sortedNums1[j];
-                        if (newResult > result)
-                        {
-                            result = newResult;
-                        }
-                    }
-                    return result;
-                }
-
-                for (int j = 0; j < sortedNums2.Length; j++)
-                {                   
-                    var temporaryArray = sortedNums1.Skip(j).ToList();
-
-                    temporaryArray.RemoveAt(0);
-
-                    var temporary = Combinations<(int, int)>(temporaryArray.Select((x,i) => (i,x)), k - 1);
-
-                    foreach (var r in temporary)
-                    {
-                        var newResult = (r.Select(v => Convert.ToInt64(v.Item2)).Sum() + sortedNums1[j]) * sortedNums2[j].x;
-
-                        if (newResult > result)
-                        {
-                            result = newResult;
-                        }
+                        result = newResult;
                     }
                 }
 
                 return result;
-            }
 
-            //Переписать итеративно 
-            private static IEnumerable<IEnumerable<T>>Combinations<T>(IEnumerable<T> list, int length) where T : IComparable
-            {
-                if (length == 1)
-                {
-                    return list.Select(t => new T[] { t });
-                }
-             
-                return 
-                    Combinations(list, length - 1)
-                        .SelectMany(
-                            t => list.Where(
-                                o => o.CompareTo(t.Last()) > 0),
-                                (t1, t2) => t1.Concat(new T[] { t2 }
-                            )
-                        );
             }
         }
     }
