@@ -59,13 +59,20 @@ using System.Diagnostics;
 
 //Console.WriteLine(result5);
 
-var summaryRange = new SummaryRanges.Solution();
+var bs = new ShortestPathBinaryMatrix.Solution();
 
-var array = new int[] { 0, 1, 2, 4, 5, 7 };
+//[0,1,1,0,0,0],[0,1,0,1,1,0],[0,1,1,0,1,0],[0,0,0,1,1,0],[1,1,1,1,1,0],[1,1,1,1,1,0]
 
-var result = summaryRange.SummaryRanges(array);
+var i1 = new int[] { 0, 1, 1, 0, 0, 0 };
+var i2 = new int[] { 0, 1, 0, 1, 1, 0 };
+var i3 = new int[] { 0, 1, 1, 0, 1, 0 };
+var i4 = new int[] { 0, 0, 0, 1, 1, 0 };
+var i5 = new int[] { 1, 1, 1, 1, 1, 0 };
+var i6 = new int[] { 1, 1, 1, 1, 1, 0 };
 
-foreach (var range in result)
-{
-    Console.WriteLine(range);
-}
+
+int[][] list = new int[][] { i1, i2, i3, i4, i5, i6 };
+
+var x = bs.ShortestPathBinaryMatrix(list);
+
+Console.WriteLine(x);
