@@ -59,20 +59,65 @@ using System.Diagnostics;
 
 //Console.WriteLine(result5);
 
-var bs = new ShortestPathBinaryMatrix.Solution();
+var bs = new DetonateTheMaximumBombs.Solution();
 
 //[0,1,1,0,0,0],[0,1,0,1,1,0],[0,1,1,0,1,0],[0,0,0,1,1,0],[1,1,1,1,1,0],[1,1,1,1,1,0]
+//[1,1,5],[10,10,5]
 
-var i1 = new int[] { 0, 1, 1, 0, 0, 0 };
-var i2 = new int[] { 0, 1, 0, 1, 1, 0 };
-var i3 = new int[] { 0, 1, 1, 0, 1, 0 };
-var i4 = new int[] { 0, 0, 0, 1, 1, 0 };
-var i5 = new int[] { 1, 1, 1, 1, 1, 0 };
-var i6 = new int[] { 1, 1, 1, 1, 1, 0 };
+//[[1,2,3],[2,3,1],[3,4,2],[4,5,3],[5,6,4]]
+
+//var i1 = new int[] { 1, 2, 3 };
+//var i2 = new int[] { 2, 3, 1 };
+//var i3 = new int[] { 3, 4, 2 };
+//var i4 = new int[] { 4, 5, 3 };
+//var i5 = new int[] { 5, 6, 4 };
+//var i6 = new int[] { 1, 1, 1 };
+
+//int[][] list = new int[][] {
+//    new int[]{2,1,3},
+//    new int[]{6,1,4}
+//};
+
+//int[][] list = new int[][] {
+//    new int[]{1,1,5},
+//    new int[]{10,10,5}
+//};
+
+//int[][] list = new int[][] {
+//    new int[] { 1, 2, 3 },
+//    new int[] { 2, 3, 1 },
+//    new int[] { 3, 4, 2 },
+//    new int[] { 4, 5, 3 },
+//    new int[] { 5, 6, 4 }
+//};
 
 
-int[][] list = new int[][] { i1, i2, i3, i4, i5, i6 };
 
-var x = bs.ShortestPathBinaryMatrix(list);
+
+int[][] list = new int[][] {
+    new int[]{54,95,4},
+    new int[]{99,46,3},
+    new int[]{29,21,3},
+    new int[]{96,72,8},
+    new int[]{49,43,3},
+    new int[]{11,20,3},
+    new int[]{2,57,1},
+    new int[]{69,51,7},
+    new int[]{97,1,10},
+    new int[]{85,45,2},
+    new int[]{38,47,1},
+    new int[]{83,75,3},
+    new int[]{65,59,3},
+    new int[]{33,4,1},
+    new int[]{32,10,2},
+    new int[]{20,97,8},
+    new int[] {35,37,3}
+}
+;
+
+var x = bs.MaximumDetonation(list);
 
 Console.WriteLine(x);
+
+
+//Console.WriteLine(bs.IsNeighbours(new int[] { 69, 51, 7 }, new int[] { 65, 59, 3 }));
