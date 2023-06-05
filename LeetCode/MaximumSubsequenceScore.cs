@@ -1,6 +1,6 @@
 ﻿namespace LeetCode
 {
-    //2542
+    //№2542
     internal class MaximumSubsequenceScore
     {
         public class Solution

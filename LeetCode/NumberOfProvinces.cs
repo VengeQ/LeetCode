@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeetCode
 {
-    //547
+    //№547
     public class NumberOfProvinces
     {
         public class Solution

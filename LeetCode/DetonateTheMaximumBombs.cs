@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeetCode
 {
-    // 2101
+    //№2101
     public class DetonateTheMaximumBombs
     {
         public class Solution

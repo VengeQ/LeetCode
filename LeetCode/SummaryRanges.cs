@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeetCode
 {
-    //228
+    //№228
     internal class SummaryRanges
     {
         public class Solution

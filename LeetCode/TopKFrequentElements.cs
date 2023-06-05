@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeetCode
 {
-    /// <summary>
-    /// N 347
-    /// </summary>
+    // №347
     internal class TopKFrequentElements
     {
         public class Solution
