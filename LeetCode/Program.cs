@@ -1,38 +1,11 @@
 ﻿
 using LeetCode;
-using System.Diagnostics;
+using System.Collections;
 
-var data = new int[][] {
-    new int[]{1, 1, 0},
-    new int[]{1, 1, 0},
-    new int[]{0 ,0 ,1 }
-};
+var flips = new MinimumFlips.Solution();
 
-var data2 = new int[][] {
-    new int[]{1, 0, 0},
-    new int[]{0, 1, 0},
-    new int[]{0 ,0 ,1 }
-};
+Console.WriteLine(flips.MinFlips(2, 6, 5));
 
-var data3 = new int[][] {
-    new int[]{1,0,0,1},
-    new int[]{0,1,1,0},
-    new int[]{ 0, 1, 1, 1 },
-    new int[]{ 1, 0, 1, 1 }
-};
+Console.WriteLine(flips.MinFlips(4, 2, 7));
 
-
-
-//int n = 1;
-//int headID = 0;
-//var manager = new int[] { -1};
-//var informTime = new int[] { 0 };
-
-var tn = new NumberOfProvinces.Solution();
-
-
-Console.WriteLine(tn.FindCircleNum(data));
-
-Console.WriteLine(tn.FindCircleNum(data2));
-
-Console.WriteLine(tn.FindCircleNum(data3));
+Console.WriteLine(flips.MinFlips(1, 2, 3));
